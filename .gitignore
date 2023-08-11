@@ -1,0 +1,6 @@
+# Rancher
+.venv
+.env
+
+#Credentials
+mercadolibre-test-395519-bedbd9e6fee2.json
