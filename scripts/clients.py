@@ -1,4 +1,6 @@
 import utils
+from pandas_gbq import to_gbq
+import numpy as np
 
 # Spreadsheet URL
 spreadsheet_url = "https://docs.google.com/spreadsheets/d/1AJY_-BxosSmbC2-sIQZn9hD5T6BE7QfzThddXId0Tyg/edit#gid=12675925"
@@ -26,7 +28,29 @@ df_clients['Salario net USD'] = df_clients['Salario net USD'].apply(utils.remove
 #"Fecha Inactividad"
 df_clients['Fecha Inactividad'] = df_clients['Fecha Inactividad'].apply(utils.standardize_date_format)
 
-###LOAD
+#Rename columns
+df_clients.rename(columns={"Estado (1 activo)": "Estado", "Salario net USD":"Salario", "Estado Civil":"Estado_Civil", "Fecha Inactividad":"Fecha_Inactividad", "Nivel Educativo":"Nivel_Educativo"}, inplace = True)
 
-print(df_clients.to_string())
+#Columns change datetype
+integer_columns = ['id', 'edad', 'Score', 'Salario']
+df_clients[integer_columns] = df_clients[integer_columns].applymap(utils.convert_to_integer)
+
+
+###LOAD
+#Specify the project and the BigQuery dataset.
+project_id = 'mercadolibre-test-395519'
+dataset_id = 'movil'
+
+#Specify the table name in BigQuery.
+table_name = 'dim_clients'
+
+# Cargar el DataFrame a BigQuery
+try:
+    to_gbq(df_clients, f'{project_id}.{dataset_id}.{table_name}', project_id=project_id, if_exists='replace')
+    print("DataFrame successfully loaded into BigQuery.")
+except Exception as e:
+    print("Error while loading the DataFrame into BigQuery:", e)
+
+
+#print(df_clients.to_string())
 

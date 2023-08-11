@@ -1,6 +1,7 @@
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import pandas as pd
+import numpy as np
 import re
 from datetime import datetime
 import locale
@@ -62,6 +63,12 @@ def standardize_date_format(date_str):
     except ValueError:
         return date_str
 
+
+def convert_to_integer(value):
+    try:
+        return int(value)
+    except (ValueError, TypeError):
+        return 0
 
 '''
 def find_most_similar_word(target_word, word_list):
