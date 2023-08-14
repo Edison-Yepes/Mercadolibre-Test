@@ -1,11 +1,11 @@
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import pandas as pd
-import numpy as np
 import re
 from datetime import datetime
 import locale
-import Levenshtein
+#import Levenshtein
+from google.cloud import bigquery
 
 """
 The function `conn()` returns an authorized connection to Google Sheets using JSON credentials.
@@ -69,6 +69,36 @@ def convert_to_integer(value):
         return int(value)
     except (ValueError, TypeError):
         return 0
+
+
+"""
+The function `get_max_date` retrieves the maximum value of date from a BigQuery table.
+"""
+def get_max_date(project_id, dataset_id, table_name, date_column):
+    credentials_path = "D:\Processes\Mercadolibre-Test\mercadolibre-test-395519-bedbd9e6fee2.json"
+    client = bigquery.Client.from_service_account_json(credentials_path)
+
+    # Construye la consulta SQL
+    sql_query = f"""
+        SELECT MAX({date_column}) AS max_date
+        FROM `{project_id}.{dataset_id}.{table_name}`
+    """
+    
+    # Ejecuta la consulta
+    try:
+        query_job = client.query(sql_query)
+        results = query_job.result()
+        # Extrae la máxima fecha de los resultados
+        for row in results:
+            max_date = pd.Timestamp(row["max_date"])
+            if max_date:
+                return pd.Timestamp(max_date)
+    except: None
+    
+    # Si no se encontraron resultados, retorna None
+    return pd.Timestamp("1900-01-01") 
+
+
 
 '''
 def find_most_similar_word(target_word, word_list):

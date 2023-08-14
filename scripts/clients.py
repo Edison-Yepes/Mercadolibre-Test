@@ -1,6 +1,5 @@
 import utils
 from pandas_gbq import to_gbq
-import numpy as np
 
 # Spreadsheet URL
 spreadsheet_url = "https://docs.google.com/spreadsheets/d/1AJY_-BxosSmbC2-sIQZn9hD5T6BE7QfzThddXId0Tyg/edit#gid=12675925"
