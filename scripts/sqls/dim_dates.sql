@@ -1,17 +1,19 @@
 -- Create table dim_dates
 CREATE TABLE `mercadolibre-test-395519.movil.dim_dates` (
-    date DATE,
-    day INT64,
-    month INT64,
-    year INT64,
-    quarter INT64,
-    semester INT64,
-    day_name STRING
+    Date_id INTEGER,
+    Date DATE,
+    Day INT64,
+    Month INT64,
+    Year INT64,
+    Quarter INT64,
+    Semester INT64,
+    Day_name STRING
 );
 
 -- Create dates
 INSERT INTO `mercadolibre-test-395519.movil.dim_dates`
 SELECT
+    (EXTRACT(YEAR FROM date)*100 + EXTRACT(MONTH FROM date))*100 + EXTRACT(DAY FROM date) AS date_id,
     date,
     EXTRACT(DAY FROM date) AS day,
     EXTRACT(MONTH FROM date) AS month,

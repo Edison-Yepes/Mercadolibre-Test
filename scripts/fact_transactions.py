@@ -30,9 +30,11 @@ df_transactions = df_transactions[df_transactions["FechaCompra"] > max_date]
 df_transactions.rename(columns={"Mediopago (Tarjeta o Cash)":"Medio_Pago"}, inplace = True)
 
 #Columns change datetype
-integer_columns = ['id', 'cust_id', 'prod_id', 'Gasto']
+df_transactions['Date_id'] = df_transactions['FechaCompra'].dt.strftime('%Y%m%d')
+integer_columns = ['id', 'cust_id', 'prod_id', 'Gasto', 'Date_id']
 df_transactions[integer_columns] = df_transactions[integer_columns].applymap(utils.convert_to_integer)
 df_transactions['FechaCompra'] = df_transactions['FechaCompra'].dt.strftime('%Y-%m-%d')
+
 
 ###LOAD
 # Cargar el DataFrame a BigQuery
