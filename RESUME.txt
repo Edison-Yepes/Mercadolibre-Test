@@ -1,0 +1,14 @@
+#BUSINESS CASE
+"Actualmente esta empresa de servicios móviles, está vendiendo 4 paquetes de datos a nivel Sur y centroamérica, y desean saber como va el negocio en cada país, entender que debe hacer con la oferta actual y si es necesario un cambio de enfoque.
+Ustedes fueron contratados como consultores expertos de data, deben tomar la BBDD que el cliente les proporcionó, cargarla en la nube, realizar un EDA, limpieza de información, generar un dashboard y proponerle al cliente que deben hacer con su oferta o donde debe vender para mejorar sus ganancias"
+
+#RESULT
+
+#Presentation
+https://prezi.com/view/Jix8Ned4LJe2mkPDHyY8/
+
+#Dashboard
+Dashboard Mercadolibre__25372
+
+#EDA
+Mercadolibre_Test_EDA.ipynb
