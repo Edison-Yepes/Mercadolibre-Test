@@ -8,7 +8,7 @@ Ustedes fueron contratados como consultores expertos de data, deben tomar la BBD
 https://prezi.com/view/Jix8Ned4LJe2mkPDHyY8/
 
 #Dashboard
-Dashboard Mercadolibre__25372
+Dashboard Mercadolibre.twb
 
 #EDA
 Mercadolibre_Test_EDA.ipynb
