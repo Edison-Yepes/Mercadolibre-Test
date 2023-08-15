@@ -1,0 +1,592 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20232.23.0611.2007                               -->
+<workbook original-version='18.1' source-build='2023.2.0 (20232.23.0611.2007)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='fact_transactions+ (movil)' inline='true' name='federated.1iyv54g0nm2etq1gqd4wy1vdh4x5' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='BigQuery' name='bigquery.0ispl0o1jpty8f1dh131r117mkva'>
+            <connection CATALOG='mercadolibre-test-395519' EXECCATALOG='mercadolibre-test-395519' authentication='auth-oauth-service-account' class='bigquery' connection-dialect='google-sql' project='Mercadolibre-Test' schema='movil' server-oauth='' username='googlesheets@mercadolibre-test-395519.iam.gserviceaccount.com' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='bigquery.0ispl0o1jpty8f1dh131r117mkva' name='dim_clients' table='[mercadolibre-test-395519.movil].[dim_clients]' type='table' />
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+          <relation connection='bigquery.0ispl0o1jpty8f1dh131r117mkva' name='fact_transactions' table='[mercadolibre-test-395519.movil].[fact_transactions]' type='table' />
+          <relation connection='bigquery.0ispl0o1jpty8f1dh131r117mkva' name='dim_clients' table='[mercadolibre-test-395519.movil].[dim_clients]' type='table' />
+          <relation connection='bigquery.0ispl0o1jpty8f1dh131r117mkva' name='dim_dates' table='[mercadolibre-test-395519.movil].[dim_dates]' type='table' />
+          <relation connection='bigquery.0ispl0o1jpty8f1dh131r117mkva' name='dim_products' table='[mercadolibre-test-395519.movil].[dim_products]' type='table' />
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <cols>
+          <map key='[Carrera]' value='[dim_clients].[Carrera]' />
+          <map key='[Device]' value='[dim_clients].[Device]' />
+          <map key='[Estado]' value='[dim_clients].[Estado]' />
+          <map key='[Estado_Civil]' value='[dim_clients].[Estado_Civil]' />
+          <map key='[FechaCompra]' value='[fact_transactions].[FechaCompra]' />
+          <map key='[Fecha_Inactividad]' value='[dim_clients].[Fecha_Inactividad]' />
+          <map key='[Gasto]' value='[fact_transactions].[Gasto]' />
+          <map key='[Genero]' value='[dim_clients].[Genero]' />
+          <map key='[Medio_Pago]' value='[fact_transactions].[Medio_Pago]' />
+          <map key='[Megabyte]' value='[dim_products].[Megabyte]' />
+          <map key='[Nivel_Educativo]' value='[dim_clients].[Nivel_Educativo]' />
+          <map key='[Nombre]' value='[dim_clients].[Nombre]' />
+          <map key='[Nombre_Producto]' value='[dim_products].[Nombre_Producto]' />
+          <map key='[Ocupacion]' value='[dim_clients].[Ocupacion]' />
+          <map key='[Pais]' value='[dim_clients].[Pais]' />
+          <map key='[Salario]' value='[dim_clients].[Salario]' />
+          <map key='[Score]' value='[dim_clients].[Score]' />
+          <map key='[Telefonia]' value='[dim_products].[Telefonia]' />
+          <map key='[ValorUSD]' value='[dim_products].[ValorUSD]' />
+          <map key='[Vigencia_Dias]' value='[dim_products].[Vigencia_Dias]' />
+          <map key='[cust_id]' value='[fact_transactions].[cust_id]' />
+          <map key='[date]' value='[dim_dates].[date]' />
+          <map key='[day]' value='[dim_dates].[day]' />
+          <map key='[day_name]' value='[dim_dates].[day_name]' />
+          <map key='[edad]' value='[dim_clients].[edad]' />
+          <map key='[id (dim_clients)]' value='[dim_clients].[id]' />
+          <map key='[id (dim_products)]' value='[dim_products].[id]' />
+          <map key='[id]' value='[fact_transactions].[id]' />
+          <map key='[month]' value='[dim_dates].[month]' />
+          <map key='[prod_id]' value='[fact_transactions].[prod_id]' />
+          <map key='[quarter]' value='[dim_dates].[quarter]' />
+          <map key='[semester]' value='[dim_dates].[semester]' />
+          <map key='[year]' value='[dim_dates].[year]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[id]</local-name>
+            <parent-name>[fact_transactions]</parent-name>
+            <remote-alias>id</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_transactions_9A76CB1127F440E691F5E3C8E28CCCF7]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cust_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[cust_id]</local-name>
+            <parent-name>[fact_transactions]</parent-name>
+            <remote-alias>cust_id</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_transactions_9A76CB1127F440E691F5E3C8E28CCCF7]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>prod_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[prod_id]</local-name>
+            <parent-name>[fact_transactions]</parent-name>
+            <remote-alias>prod_id</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_transactions_9A76CB1127F440E691F5E3C8E28CCCF7]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Gasto</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Gasto]</local-name>
+            <parent-name>[fact_transactions]</parent-name>
+            <remote-alias>Gasto</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_transactions_9A76CB1127F440E691F5E3C8E28CCCF7]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FechaCompra</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[FechaCompra]</local-name>
+            <parent-name>[fact_transactions]</parent-name>
+            <remote-alias>FechaCompra</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_transactions_9A76CB1127F440E691F5E3C8E28CCCF7]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Medio_Pago</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Medio_Pago]</local-name>
+            <parent-name>[fact_transactions]</parent-name>
+            <remote-alias>Medio_Pago</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_transactions_9A76CB1127F440E691F5E3C8E28CCCF7]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[id (dim_clients)]</local-name>
+            <parent-name>[dim_clients]</parent-name>
+            <remote-alias>id</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_clients_521F5B9BC1DB47A383BFC3CF0732AE96]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Nombre</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Nombre]</local-name>
+            <parent-name>[dim_clients]</parent-name>
+            <remote-alias>Nombre</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_clients_521F5B9BC1DB47A383BFC3CF0732AE96]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pais</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Pais]</local-name>
+            <parent-name>[dim_clients]</parent-name>
+            <remote-alias>Pais</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_clients_521F5B9BC1DB47A383BFC3CF0732AE96]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>edad</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[edad]</local-name>
+            <parent-name>[dim_clients]</parent-name>
+            <remote-alias>edad</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_clients_521F5B9BC1DB47A383BFC3CF0732AE96]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Ocupacion</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Ocupacion]</local-name>
+            <parent-name>[dim_clients]</parent-name>
+            <remote-alias>Ocupacion</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_clients_521F5B9BC1DB47A383BFC3CF0732AE96]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Score</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Score]</local-name>
+            <parent-name>[dim_clients]</parent-name>
+            <remote-alias>Score</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_clients_521F5B9BC1DB47A383BFC3CF0732AE96]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Salario</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Salario]</local-name>
+            <parent-name>[dim_clients]</parent-name>
+            <remote-alias>Salario</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_clients_521F5B9BC1DB47A383BFC3CF0732AE96]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Estado_Civil</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Estado_Civil]</local-name>
+            <parent-name>[dim_clients]</parent-name>
+            <remote-alias>Estado_Civil</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_clients_521F5B9BC1DB47A383BFC3CF0732AE96]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Estado</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Estado]</local-name>
+            <parent-name>[dim_clients]</parent-name>
+            <remote-alias>Estado</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_clients_521F5B9BC1DB47A383BFC3CF0732AE96]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Fecha_Inactividad</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Fecha_Inactividad]</local-name>
+            <parent-name>[dim_clients]</parent-name>
+            <remote-alias>Fecha_Inactividad</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_clients_521F5B9BC1DB47A383BFC3CF0732AE96]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Genero</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Genero]</local-name>
+            <parent-name>[dim_clients]</parent-name>
+            <remote-alias>Genero</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_clients_521F5B9BC1DB47A383BFC3CF0732AE96]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Device</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Device]</local-name>
+            <parent-name>[dim_clients]</parent-name>
+            <remote-alias>Device</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_clients_521F5B9BC1DB47A383BFC3CF0732AE96]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Nivel_Educativo</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Nivel_Educativo]</local-name>
+            <parent-name>[dim_clients]</parent-name>
+            <remote-alias>Nivel_Educativo</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_clients_521F5B9BC1DB47A383BFC3CF0732AE96]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Carrera</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Carrera]</local-name>
+            <parent-name>[dim_clients]</parent-name>
+            <remote-alias>Carrera</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_clients_521F5B9BC1DB47A383BFC3CF0732AE96]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[date]</local-name>
+            <parent-name>[dim_dates]</parent-name>
+            <remote-alias>date</remote-alias>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_dates_0815C4F36A7F44659D5E7E6A6AEA5389]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>day</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[day]</local-name>
+            <parent-name>[dim_dates]</parent-name>
+            <remote-alias>day</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_dates_0815C4F36A7F44659D5E7E6A6AEA5389]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>month</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[month]</local-name>
+            <parent-name>[dim_dates]</parent-name>
+            <remote-alias>month</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_dates_0815C4F36A7F44659D5E7E6A6AEA5389]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[year]</local-name>
+            <parent-name>[dim_dates]</parent-name>
+            <remote-alias>year</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_dates_0815C4F36A7F44659D5E7E6A6AEA5389]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>quarter</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[quarter]</local-name>
+            <parent-name>[dim_dates]</parent-name>
+            <remote-alias>quarter</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_dates_0815C4F36A7F44659D5E7E6A6AEA5389]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>semester</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[semester]</local-name>
+            <parent-name>[dim_dates]</parent-name>
+            <remote-alias>semester</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_dates_0815C4F36A7F44659D5E7E6A6AEA5389]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>day_name</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[day_name]</local-name>
+            <parent-name>[dim_dates]</parent-name>
+            <remote-alias>day_name</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_dates_0815C4F36A7F44659D5E7E6A6AEA5389]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[id (dim_products)]</local-name>
+            <parent-name>[dim_products]</parent-name>
+            <remote-alias>id</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_products_7B91143794824516B0136BDA5E7C38A5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Nombre_Producto</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Nombre_Producto]</local-name>
+            <parent-name>[dim_products]</parent-name>
+            <remote-alias>Nombre_Producto</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_products_7B91143794824516B0136BDA5E7C38A5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ValorUSD</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ValorUSD]</local-name>
+            <parent-name>[dim_products]</parent-name>
+            <remote-alias>ValorUSD</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_products_7B91143794824516B0136BDA5E7C38A5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Megabyte</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Megabyte]</local-name>
+            <parent-name>[dim_products]</parent-name>
+            <remote-alias>Megabyte</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_products_7B91143794824516B0136BDA5E7C38A5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Vigencia_Dias</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Vigencia_Dias]</local-name>
+            <parent-name>[dim_products]</parent-name>
+            <remote-alias>Vigencia_Dias</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_products_7B91143794824516B0136BDA5E7C38A5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Telefonia</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Telefonia]</local-name>
+            <parent-name>[dim_products]</parent-name>
+            <remote-alias>Telefonia</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_products_7B91143794824516B0136BDA5E7C38A5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[Estado]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='Estado Civil' datatype='string' name='[Estado_Civil]' role='dimension' type='nominal' />
+      <column aggregation='Count' caption='Fecha Compra' datatype='date' datatype-customized='true' name='[FechaCompra]' role='dimension' type='ordinal' />
+      <column caption='Fecha Inactividad' datatype='string' name='[Fecha_Inactividad]' role='dimension' type='nominal' />
+      <column caption='Medio Pago' datatype='string' name='[Medio_Pago]' role='dimension' type='nominal' />
+      <column caption='Nivel Educativo' datatype='string' name='[Nivel_Educativo]' role='dimension' type='nominal' />
+      <column caption='Nombre Producto' datatype='string' name='[Nombre_Producto]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Pais]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='Valor USD' datatype='integer' name='[ValorUSD]' role='measure' type='quantitative' />
+      <column caption='Vigencia Dias' datatype='integer' name='[Vigencia_Dias]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='dim_clients' datatype='table' name='[__tableau_internal_object_id__].[dim_clients_521F5B9BC1DB47A383BFC3CF0732AE96]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='dim_dates' datatype='table' name='[__tableau_internal_object_id__].[dim_dates_0815C4F36A7F44659D5E7E6A6AEA5389]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='dim_products' datatype='table' name='[__tableau_internal_object_id__].[dim_products_7B91143794824516B0136BDA5E7C38A5]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='fact_transactions' datatype='table' name='[__tableau_internal_object_id__].[fact_transactions_9A76CB1127F440E691F5E3C8E28CCCF7]' role='measure' type='quantitative' />
+      <column caption='Cust Id' datatype='integer' name='[cust_id]' role='dimension' type='ordinal' />
+      <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+      <column caption='Day' datatype='integer' name='[day]' role='dimension' type='quantitative' />
+      <column caption='Day Name' datatype='string' name='[day_name]' role='dimension' type='nominal' />
+      <column caption='Edad' datatype='integer' name='[edad]' role='measure' type='quantitative' />
+      <column caption='Id (Dim Clients)' datatype='integer' name='[id (dim_clients)]' role='dimension' type='ordinal' />
+      <column caption='Id (Dim Products)' datatype='integer' name='[id (dim_products)]' role='dimension' type='ordinal' />
+      <column caption='Id' datatype='integer' name='[id]' role='dimension' type='ordinal' />
+      <column caption='Month' datatype='integer' name='[month]' role='dimension' type='quantitative' />
+      <column caption='Prod Id' datatype='integer' name='[prod_id]' role='dimension' type='ordinal' />
+      <column caption='Quarter' datatype='integer' name='[quarter]' role='dimension' type='quantitative' />
+      <column caption='Semester' datatype='integer' name='[semester]' role='measure' type='quantitative' />
+      <column caption='Year' datatype='integer' name='[year]' role='dimension' type='quantitative' />
+      <drill-paths>
+        <drill-path name='Pais, Estado'>
+          <field>[Pais]</field>
+          <field>[Estado]</field>
+        </drill-path>
+      </drill-paths>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Colombia&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='dim_clients' id='dim_clients_521F5B9BC1DB47A383BFC3CF0732AE96'>
+            <properties context=''>
+              <relation connection='bigquery.0ispl0o1jpty8f1dh131r117mkva' name='dim_clients' table='[mercadolibre-test-395519.movil].[dim_clients]' type='table' />
+            </properties>
+          </object>
+          <object caption='dim_dates' id='dim_dates_0815C4F36A7F44659D5E7E6A6AEA5389'>
+            <properties context=''>
+              <relation connection='bigquery.0ispl0o1jpty8f1dh131r117mkva' name='dim_dates' table='[mercadolibre-test-395519.movil].[dim_dates]' type='table' />
+            </properties>
+          </object>
+          <object caption='dim_products' id='dim_products_7B91143794824516B0136BDA5E7C38A5'>
+            <properties context=''>
+              <relation connection='bigquery.0ispl0o1jpty8f1dh131r117mkva' name='dim_products' table='[mercadolibre-test-395519.movil].[dim_products]' type='table' />
+            </properties>
+          </object>
+          <object caption='fact_transactions' id='fact_transactions_9A76CB1127F440E691F5E3C8E28CCCF7'>
+            <properties context=''>
+              <relation connection='bigquery.0ispl0o1jpty8f1dh131r117mkva' name='fact_transactions' table='[mercadolibre-test-395519.movil].[fact_transactions]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[cust_id]' />
+              <expression op='[id (dim_clients)]' />
+            </expression>
+            <first-end-point object-id='fact_transactions_9A76CB1127F440E691F5E3C8E28CCCF7' />
+            <second-end-point object-id='dim_clients_521F5B9BC1DB47A383BFC3CF0732AE96' unique-key='true' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[FechaCompra]' />
+              <expression op='[date]' />
+            </expression>
+            <first-end-point object-id='fact_transactions_9A76CB1127F440E691F5E3C8E28CCCF7' />
+            <second-end-point object-id='dim_dates_0815C4F36A7F44659D5E7E6A6AEA5389' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[prod_id]' />
+              <expression op='[id (dim_products)]' />
+            </expression>
+            <first-end-point object-id='fact_transactions_9A76CB1127F440E691F5E3C8E28CCCF7' />
+            <second-end-point object-id='dim_products_7B91143794824516B0136BDA5E7C38A5' unique-key='true' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{6AAD5120-054B-4E26-B34D-7D500DE7E560}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{D9F75624-C3DD-47FA-9A4B-C203B7E78659}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAACFUlEQVR4nO3TMQEAIAzAMMC/5yFjRxMFfXpnZg5Eve0A2GQA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQD
+      kGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBp
+      BiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA
+      0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDN
+      AKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxA
+      mgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKR9Y+0F
+      fBUOM1sAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>

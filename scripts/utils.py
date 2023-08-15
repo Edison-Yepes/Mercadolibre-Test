@@ -90,13 +90,13 @@ def get_max_date(project_id, dataset_id, table_name, date_column):
         results = query_job.result()
         # Extrae la máxima fecha de los resultados
         for row in results:
-            max_date = pd.Timestamp(row["max_date"])
+            max_date = pd.Timestamp(row["max_date"]).strftime("%d/%m/%Y")
             if max_date:
-                return pd.Timestamp(max_date)
+                return pd.Timestamp(max_date).strftime("%d/%m/%Y")
     except: None
     
     # Si no se encontraron resultados, retorna None
-    return pd.Timestamp("1900-01-01") 
+    return pd.Timestamp("1900-01-01").strftime("%d/%m/%Y")
 
 
 
